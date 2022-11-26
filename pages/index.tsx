@@ -23,12 +23,13 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center text-center content-center pt-14">
         <p className="bg-clip-text text-transparent  bg-hash-red-gradient text-5xl pt-4  font-semibold ">
           BlockSign
-          <p className="text-center pt-3 ">
-            Next Generation Notrization Software
+          <p className="text-center pt-3 text- ">
+            Next Generation <span className="text-med-black">Notrization</span>{" "}
+            Software
           </p>
         </p>
-        <p className="text-raisin-black text-2xl font-medium pt-3">
-          A real <span className="text-hash-red"> smart</span> contract
+        <p className="text-med-black text-2xl font-medium pt-3">
+          The real <span className="text-hash-red"> smart</span> contract
         </p>
       </div>
       <div className="flex justify-center gap-x-20 mt-20">
@@ -85,12 +86,12 @@ export default function Home() {
           <p className="text-xl  pt-12">hello</p>
         </div>
       </div>
-      <div className="flex justify-center items-center flex-col pt-20">
+      <div className="flex justify-center items-center flex-col pt-20 text-med-black">
         <p className="text-3xl font-semibold ">
-          send important updates to <br /> users within your dapp <br />
+          sign contracts <br /> with verified user with full transparancy <br />
         </p>
         <p className="text-base font-medium pt-1">
-          embed hashmail widget today with less than 10 lines of code
+          get an authorized notary for ypur contracts
         </p>
       </div>
       <div className="flex justify-center items-center pt-32 pb-20 relative">
@@ -189,7 +190,7 @@ export default function Home() {
           </div>
           <div className="w-72 ">
             <Image
-              src="/svg/5.svg"
+              src="/svg/55.svg"
               height={50}
               width={50}
               alt="hello"
@@ -203,7 +204,7 @@ export default function Home() {
           </div>
           <div className="w-72">
             <Image
-              src="/svg/5.svg"
+              src="/svg/555.svg"
               height={50}
               width={50}
               alt="hello"
@@ -231,6 +232,9 @@ export default function Home() {
           </button>
         </Link>
       </div>
+      <footer className="text-med-black font-medium flex w-full justify-center pb-4 text-xl">
+        Made With ❤️ by <span className="text-hash-red"> Team0X </span>
+      </footer>
     </div>
   );
 }
