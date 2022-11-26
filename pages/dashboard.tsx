@@ -3,6 +3,7 @@ import { Cards } from "components/dashboard";
 import { ABI } from "constants/abi";
 import { CONTRACT_ADDRESS } from "constants/contractAddress";
 import { ethers } from "ethers";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useAccount, useSigner } from "wagmi";
 // @ts-nocheck
@@ -82,39 +83,16 @@ const Dashboard = (props: Props) => {
   }, [address, contract]);
 
   return (
-    <div className="bg-raisin-black flex flex-col items-center h-full px-1 ">
+    <div className="bg-raisin-black flex flex-col items-center h-full px-1 min-h-[100vh]">
       <div className=" w-full flex p-6 items-end justify-end ">
         <ConnectButton />
       </div>
-      {/* {notaries.map(function (sub: any) {
-          const id = sub.notaryid;
-          sub = sub.notary;
-          return (
-            <div key={id}>
-              hello
-              <Cards
-                notaryid={id}
-                arb={sub[1]}
-                party1={sub[2]}
-                party2={sub[3]}
-                ipfs={sub[0]}
-                isSignParty1={sub[4]}
-                isSignParty2={sub[5]}
-                sigparty1={sub[6]}
-                sigparty2={sub[7]}
-                timeStampNotaryCreation={sub[8]}
-                part1SignTimeStampNotaryCreation={sub[9]}
-                part2SignTimeStampNotaryCreation={sub[10]}
-                isExpired={sub[11]}
-              />
-            </div>
-          );
 
-        })} */}
       <h2 className="bg-clip-text text-transparent text-5xl bg-hash-red-gradient font-semibold  p-4  flex -mt-16 flex-col w-full">
         BlockSign
-        <span className="text-sm ml-24 pt-2 ">
-          the actual &quot;smart&quot; contract
+        <span className="text-sm ml-24 pt-2 text-hash-light ">
+          the actual <span className="text-hash-red">&quot;smart&quot;</span>
+          contract
         </span>
       </h2>
 

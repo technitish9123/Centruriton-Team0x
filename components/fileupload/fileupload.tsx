@@ -105,9 +105,12 @@ const FileUpload: React.FC = () => {
     <div className=" flex flex-col items-center">
       <h4 className="bg-clip-text text-transparent text-5xl bg-hash-red-gradient font-semibold h-full p-4  -mt-16 flex flex-col w-full">
         BlockSign
-        <span className="text-sm ml-24 pt-2 ">
+        <span className="text-sm ml-24 pt-2 text-hash-light ">
           {" "}
-          the actual &quot;smart&quot; contract
+          the actual <span className="text-hash-red">
+            &quot;smart&quot;
+          </span>{" "}
+          contract
         </span>
       </h4>
       <div className="flex flex-col gap-4 gap-y-4 pt-16 justify-center text-center  relative ">
