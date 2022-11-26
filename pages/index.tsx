@@ -48,7 +48,7 @@ export default function Home() {
             alt="hello"
             className="z-100 flex "
           />
-          <p className="text-xl  pt-12">hello</p>
+          <p className="text-xl  pt-12">Immutability</p>
         </div>
 
         <div className="bg-raisin-black relative w-72 h-72 text-white flex flex-col items-center justify-center">
@@ -66,7 +66,7 @@ export default function Home() {
             alt="hello"
             className="z-100 flex "
           />
-          <p className="text-xl  pt-12">hello</p>
+          <p className="text-xl  pt-12">Transparacy</p>
         </div>
         <div className="bg-raisin-black relative w-72 h-72 text-white flex flex-col items-center justify-center">
           <Image
@@ -83,7 +83,7 @@ export default function Home() {
             alt="hello"
             className="z-100 flex "
           />
-          <p className="text-xl  pt-12">hello</p>
+          <p className="text-xl  pt-12">Reliability</p>
         </div>
       </div>
       <div className="flex justify-center items-center flex-col pt-20 text-med-black">
@@ -91,7 +91,7 @@ export default function Home() {
           sign contracts <br /> with verified user with full transparancy <br />
         </p>
         <p className="text-base font-medium pt-1">
-          get an authorized notary for ypur contracts
+          get an authorized notary for your contracts
         </p>
       </div>
       <div className="flex justify-center items-center pt-32 pb-20 relative">
@@ -141,10 +141,11 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-3 items-center justify-center pt-36 items-centercontent-center px-16">
         <div className="text-3xl font-medium px-4 text-med-black">
-          automate emails <span className="text-hash-red">at every stage</span>
+          automate contract renewal{" "}
+          <span className="text-hash-red">and transfer</span>
           <p className="text-xl pt-5">
-            the workflow builder will allow you to provide a tailored experience
-            for every customer journey
+            the deployed smart contract will allow you to securely keep track of
+            the expiry dates
           </p>
         </div>
         <div className=" flex items-center content-center justify-center">
@@ -171,7 +172,8 @@ export default function Home() {
           Worried About Signing Agreement?
         </p>
         <p className="text-med-black text-4xl">
-          use hashmail to communicate directly <br /> to a user’s wallet address
+          use BlockSign to easily sign <br />
+          your contract
         </p>
         <div className="flex flex-wrap  justify-between w-full  pr-40 py-20 ">
           <div className="w-72">
@@ -183,9 +185,9 @@ export default function Home() {
               className="  "
             />
             <p className="text-manatee">
-              <h4 className="text-med-black  font-semibold">Retention</h4>
-              Reduce user drop-offs by 60% and increase retention by 2x by
-              sending reminder
+              <h4 className="text-med-black  font-semibold">Trust</h4>
+              Since all the data are stored onChain. So there is not a chance of
+              trust issue.
             </p>
           </div>
           <div className="w-72 ">
@@ -197,9 +199,9 @@ export default function Home() {
               className="  "
             />
             <p className="text-manatee">
-              <h4 className="text-med-black  font-semibold">Retention</h4>
-              Reduce user drop-offs by 60% and increase retention by 2x by
-              sending reminder
+              <h4 className="text-med-black  font-semibold">User-Experience</h4>
+              Easily Sign Your Contract From your Comfort Zone with Easy To use
+              User Interface.
             </p>
           </div>
           <div className="w-72">
@@ -211,9 +213,10 @@ export default function Home() {
               className="  "
             />
             <p className="text-manatee">
-              <h4 className="text-med-black  font-semibold">Retention</h4>
-              Reduce user drop-offs by 60% and increase retention by 2x by
-              sending reminder
+              <h4 className="text-med-black  font-semibold">
+                helpful Dashboard
+              </h4>
+              Keep Track of all of your contract on a single click
             </p>
           </div>
         </div>
