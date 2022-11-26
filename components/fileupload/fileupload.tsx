@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import {
   useConnect,
   useAccount,
-  usePrepareContractWrite,
-  useContractWrite,
   configureChains,
   defaultChains,
   useSigner,
@@ -80,13 +78,12 @@ const FileUpload: React.FC = () => {
   const submitHandler = async () => {
     setSpinStatus(true);
     try {
-      const txReceipt = await contract
-        .putNotaryOnChain(
-          fileUploadStatus?.path,
-          part1WalletAdd,
-          part2WalletAdd
-        )
-        .wait();
+      const txReceipt = await contract.putNotaryOnChain(
+        fileUploadStatus?.path,
+        part1WalletAdd,
+        part2WalletAdd
+      );
+
       console.log("tx", txReceipt.status);
       console.log("txReceipt", txReceipt);
       if (txReceipt.status === 1) {
@@ -103,7 +100,6 @@ const FileUpload: React.FC = () => {
       setSpinStatus(false);
     }
   };
-  console.log(spinstatus);
 
   return (
     <div className=" flex flex-col items-center">

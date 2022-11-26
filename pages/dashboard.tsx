@@ -5,7 +5,7 @@ import { CONTRACT_ADDRESS } from "constants/contractAddress";
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
 import { useAccount, useSigner } from "wagmi";
-
+// @ts-nocheck
 type Props = {};
 
 const Dashboard = (props: Props) => {
@@ -52,20 +52,35 @@ const Dashboard = (props: Props) => {
     })();
   }, [address, signer]);
 
-  const cn = async () => {
-    try {
-      console.log("first");
-      const notary = await contract.getUserIds(address);
-      console.log(notary);
-      //   const notary = await contract.owner();
-      //   console.log(notary);
-      //   const userAssociatedNotaryIds = await contract.putNotaryOnChain();
+  useEffect(() => {
+    (async () => {
+      try {
+        console.log("first");
+        const notaries = [];
 
-      //   console.log(userAssociatedNotaryIds);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+        const userAssociatedNotaryIds = await contract.getUserIds(address);
+        console.log(userAssociatedNotaryIds);
+        for (let i = 0; i < userAssociatedNotaryIds.length; i++) {
+          const id = userAssociatedNotaryIds[i].toString();
+          console.log(id);
+          const notary = await contract.notaries(id);
+          const objNotary = {};
+          // @ts-ignore
+          objNotary.notaryid = id;
+          // @ts-ignore
+
+          objNotary.notary = notary;
+
+          notaries.push(objNotary);
+        }
+        console.log("Notaries: " + JSON.stringify(notaries));
+        setNotaries(notaries);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [address, contract]);
+
   return (
     <div className="bg-raisin-black flex flex-col items-center h-full px-1 ">
       <div className=" w-full flex p-6 items-end justify-end ">
@@ -118,16 +133,30 @@ const Dashboard = (props: Props) => {
       </p>
 
       <div className=" flex gap-40 flex-wrap items-center content-center justify-center">
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
+        {notaries.map(function (sub: any) {
+          const id = sub.notaryid;
+          sub = sub.notary;
+          return (
+            <div key={id}>
+              <Cards
+                notaryid={id}
+                arb={sub[1]}
+                party1={sub[2]}
+                party2={sub[3]}
+                ipfs={sub[0]}
+                isSignParty1={sub[4]}
+                isSignParty2={sub[5]}
+                sigparty1={sub[6]}
+                sigparty2={sub[7]}
+                timeStampNotaryCreation={sub[8]}
+                part1SignTimeStampNotaryCreation={sub[9]}
+                part2SignTimeStampNotaryCreation={sub[10]}
+                isExpired={sub[11]}
+              />
+            </div>
+          );
+        })}
       </div>
-      <button onClick={cn}>hello</button>
     </div>
     //
     // </>

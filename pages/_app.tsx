@@ -9,6 +9,7 @@ import {
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+import Auth from "components/auth";
 const { chains, provider } = configureChains(
   [
     chain.mainnet,
@@ -37,6 +38,7 @@ const wagmiClient = createClient({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Auth />
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider
           chains={chains}
