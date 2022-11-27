@@ -66,7 +66,7 @@ const Cards: React.FC<CardsProps> = ({
   console.log();
 
   return (
-    <div className="flex rounded-lg bg-hash-red-gradient w-104 h-auto text-raisin-black ">
+    <div className="flex rounded-lg bg-hash-red-gradient w-104 h-auto text-raisin-black py-4">
       <div className="grid grid-cols-2  justify-around content-center gap-x-5 items-center  px-6 gap-y-1">
         <p className="col-span-2 ">
           {" "}
@@ -118,11 +118,11 @@ const Cards: React.FC<CardsProps> = ({
             {isSignParty2 ? "signed" : "unsigned"}
           </button>
         </div>
-        <div className="col-span-2 flex  w-full items-center justify-center py-6  ">
+        <div className="col-span-2 flex  w-full items-center justify-center pt-6 pb-2 text-center  ">
           {address?.toLocaleUpperCase() == party1.toLocaleUpperCase() &&
           !isSignParty1 ? (
             <button
-              className="text-center text-white font-bold rounded py-2 w-6/12 focus:outline-none bg-slate-500 border-2 border-indigo-400"
+              className="text-center text-white font-bold rounded py-1  w-6/12 focus:outline-none bg-slate-500 border-2 border-indigo-400"
               onClick={signENotary}
             >
               Sign E-Notary
@@ -138,13 +138,18 @@ const Cards: React.FC<CardsProps> = ({
             </button>
           ) : null}
         </div>
-        <a
-          href={`https://infura-ipfs.io/ipfs/${ipfs}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button> Download Document</button>
-        </a>
+        <div className="col-span-2 flex justify-center">
+          <a
+            href={`https://infura-ipfs.io/ipfs/${ipfs}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className=" border-2  rounded-lg px-2 my-3 text-hash-light hover:bg-red-600">
+              {" "}
+              Download Document
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );
