@@ -66,15 +66,15 @@ const Cards: React.FC<CardsProps> = ({
   console.log();
 
   return (
-    <div className="flex rounded-lg bg-hash-red-gradient w-104 h-auto text-raisin-black py-4">
+    <div className="flex rounded-lg bg-hash-red-gradient w-full h-auto text-raisin-black py-4">
       <div className="grid grid-cols-2  justify-around content-center gap-x-5 items-center  px-6 gap-y-1">
         <p className="col-span-2 ">
           {" "}
-          Arbitator:{" "}
+          <span className="font-semibold">Arbitator: </span>
           {`0x${arb.slice(2, 5)}...${arb.slice(arb.length - 4, arb.length)}`}
         </p>
         <p className="col-span-2 text-sm">
-          E-Notary Creation Timestamp:{" "}
+          <span className="font-semibold"> E-Notary Creation Timestamp: </span>
           {moment
             .unix(timeStampNotaryCreation.toString())
             .format("DD/MM/YYYY , h:mm:ss a")}
@@ -83,13 +83,13 @@ const Cards: React.FC<CardsProps> = ({
         <div className="gap-y-2 grid">
           <p className="font-bold text-lg  text-center py-2">party1</p>
           <p>
-            address:
+            <span className="font-semibold"> address: </span>
             {`0x${party1.slice(2, 5)}...${party1.slice(
               party1.length - 4,
               party1.length
             )}`}
           </p>
-          signed At:
+          <span className="font-semibold">signed At:</span>
           {isSignParty1
             ? moment
                 .unix(part1SignTimeStampNotaryCreation.toString())
@@ -102,13 +102,13 @@ const Cards: React.FC<CardsProps> = ({
         <div className="gap-y-2 grid">
           <p className="font-bold text-lg text-center py-2">party2</p>
           <p>
-            address:{" "}
+            <span className="font-semibold"> address: </span>
             {`0x${party2.slice(2, 5)}...${party2.slice(
               party2.length - 4,
               party2.length
             )}`}
           </p>
-          signed At:
+          <span className="font-semibold"> signed At: </span>
           {isSignParty2
             ? moment
                 .unix(part2SignTimeStampNotaryCreation.toString())
