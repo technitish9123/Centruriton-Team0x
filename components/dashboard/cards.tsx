@@ -63,6 +63,7 @@ const Cards: React.FC<CardsProps> = ({
     };
     fetchData();
   }, [address, signer]);
+  console.log();
 
   return (
     <div className="flex rounded-lg bg-hash-red-gradient w-104 h-auto text-raisin-black ">
@@ -137,6 +138,13 @@ const Cards: React.FC<CardsProps> = ({
             </button>
           ) : null}
         </div>
+        <a
+          href={`https://infura-ipfs.io/ipfs/${ipfs}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button> Download Document</button>
+        </a>
       </div>
     </div>
   );
